@@ -106,7 +106,7 @@ function SignIn() {
           <View style={{alignItems: 'center'}}>
             <Image
               source={require('./logo.png')}
-              style={{width: 250, height: 250}}
+              style={{width: 240, height: 240}}
             />
           </View>
           <LogInView />
