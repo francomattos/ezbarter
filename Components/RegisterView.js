@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import {Button, Text, Input} from 'react-native-elements';
-import {useNavigation} from '@react-navigation/native';
-import {useAuth} from './Database/AuthProvider';
+import React, { useState } from "react";
+import { Button, Text, Input } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
+import { useAuth } from "./Database/AuthProvider";
 
 export function RegisterView() {
   const navigation = useNavigation();
-  const {addUser} = useAuth();
-  //Variables for the form input
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [userEmail, setEmail] = useState('');
-  const [userLogin, setLogin] = useState('');
-  const [userPassword, setPassword] = useState('');
-  const [zipCode, setZipcode] = useState('');
+  const { addUser } = useAuth();
+  // Variables for the form input
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [userEmail, setEmail] = useState("");
+  const [userLogin, setLogin] = useState("");
+  const [userPassword, setPassword] = useState("");
+  const [zipCode, setZipcode] = useState("");
 
   return (
     <>
@@ -50,16 +50,16 @@ export function RegisterView() {
       <Button
         onPress={() => {
           if (
-            firstName == '' ||
-            lastName == '' ||
-            userEmail == '' ||
-            userLogin == '' ||
-            userPassword == '' ||
-            zipCode == ''
+            firstName == "" ||
+            lastName == "" ||
+            userEmail == "" ||
+            userLogin == "" ||
+            userPassword == "" ||
+            zipCode == ""
           )
-            alert('Please enter all item information');
+            alert("Please enter all item information");
           else {
-            idNumber = 'AaNEW' + Math.floor(Math.random() * 10000000);
+            idNumber = "AaNEW" + Math.floor(Math.random() * 10000000);
             const newUserToAdd = {
               id: idNumber,
               firstname: firstName,
@@ -70,7 +70,7 @@ export function RegisterView() {
               zipcode: zipCode,
             };
             addUser(newUserToAdd);
-            navigation.navigate('SignIn');
+            navigation.navigate("SignIn");
           }
         }}
         title="Register"
